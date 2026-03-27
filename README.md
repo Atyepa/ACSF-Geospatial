@@ -1,6 +1,8 @@
 # ACSF Geospatial Dietary Indicators
 
-An interactive R Shiny application for exploring Australian dietary data across geographic regions, built using the 2023-24 ABS National Nutrition and Physical Activity Survey (NNPAS) datacube.
+An interactive R Shiny application for exploring Australian dietary data across geographic regions, built using the 
+[Geospatial dietary indicators data cube](https://www.abs.gov.au/articles/geospatial-dietary-indicators/4316DO002_202324_ESTIMATES.xlsx)
+2023-24 ABS National Nutrition and Physical Activity Survey (NNPAS) datacube.
 
 **Live app:** [atyepa.shinyapps.io/ACSF_Geospatial_2023_24](https://atyepa.shinyapps.io/ACSF_Geospatial_2023_24/)
 
