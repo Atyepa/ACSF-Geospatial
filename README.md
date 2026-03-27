@@ -1,8 +1,7 @@
 # ACSF Geospatial Dietary Indicators
 
 An interactive R Shiny application for exploring Australian dietary data across geographic regions, built using the 
-[Geospatial dietary indicators data cube](https://www.abs.gov.au/articles/geospatial-dietary-indicators/4316DO002_202324_ESTIMATES.xlsx)
-2023-24 ABS National Nutrition and Physical Activity Survey (NNPAS) datacube.
+[Geospatial dietary indicators data cube](https://www.abs.gov.au/articles/geospatial-dietary-indicators/4316DO002_202324_ESTIMATES.xlsx) from [Geospatial dietary indicators - Apparent consumption-based dietary indicators for sub-national areas including SEIFA, Remoteness, SA3 and SA4](https://www.abs.gov.au/articles/geospatial-dietary-indicators)
 
 **Live app:** [atyepa.shinyapps.io/ACSF_Geospatial_2023_24](https://atyepa.shinyapps.io/ACSF_Geospatial_2023_24/)
 
@@ -38,11 +37,11 @@ Dietary data are sourced from the [ABS Geospatial Dietary Indicators](https://ww
 
 | Level | Description |
 |-------|-------------|
-| State/territory | All states and territories |
-| SEIFA quintiles | Socioeconomic disadvantage deciles |
-| Remoteness Area | RA1–RA5 classifications |
-| SA3 | ~340 Statistical Area Level 3 regions |
-| SA4 | ~107 Statistical Area Level 4 regions |
+| State/territory | All states and territories (except Tas. - sorry!) |
+| SEIFA quintiles | Socioeconomic disadvantage deciles (IRSD) |
+| Remoteness Area | RA0–RA4 classifications |
+| SA3 | ~330 Statistical Area Level 3 regions |
+| SA4 | ~88 Statistical Area Level 4 regions |
 
 ### Visualisation modes
 
@@ -105,6 +104,10 @@ The data processing script (`App data processing.R`) downloads the ABS datacube 
 
 ## Notes
 
-- All dietary estimates are population means for persons aged 2 years and over.
-- Suppressed or unreliable cells (small sample sizes) may not appear in all geographic breakdowns.
-- SA3/SA4 spatial data are pre-simplified to reduce file size and improve map rendering performance.
+- All dietary estimates are amounts per 10,000 kJ.
+- SA3/SA4 spatial polygons are pre-simplified to reduce file size and improve map rendering performance.
+* Data suppresssion was applied to a number of areas to uphold confidentialisation. These include:
+- 76 out of 330 SA3s 
+- 7 out of 88 SA4s
+- 1 out of 8 States
+
