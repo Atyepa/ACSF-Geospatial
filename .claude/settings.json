@@ -10,7 +10,9 @@
       "Bash(for f in \"dumbbell_Server_patch.R\" \"cutoff_Server_patch.R\" \"cutoff_UI_patch.R\")",
       "Bash(do)",
       "Bash(\"/c/Program Files/R/R-4.5.2/bin/Rscript.exe\" -e \"tryCatch\\(parse\\(''c:/Users/atyeo/OneDrive/R data/ACSF small area/$f''\\), error=function\\(e\\) cat\\(''ERROR in $f:'', conditionMessage\\(e\\), ''\\\\n''\\)\\)\")",
-      "Bash(\"/c/Program Files/R/R-4.5.2/bin/Rscript.exe\" -e \"tryCatch\\(parse\\(''c:/Users/atyeo/OneDrive/R data/ACSF small area/cutoff_UI_patch \\(1\\).R''\\), error=function\\(e\\) cat\\(''ERROR:'', conditionMessage\\(e\\), ''\\\\n''\\), finally=cat\\(''done\\\\n''\\)\\)\")"
+      "Bash(\"/c/Program Files/R/R-4.5.2/bin/Rscript.exe\" -e \"tryCatch\\(parse\\(''c:/Users/atyeo/OneDrive/R data/ACSF small area/cutoff_UI_patch \\(1\\).R''\\), error=function\\(e\\) cat\\(''ERROR:'', conditionMessage\\(e\\), ''\\\\n''\\), finally=cat\\(''done\\\\n''\\)\\)\")",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ]
   }
 }
