@@ -274,10 +274,8 @@ server <- function(input, output, session) {
       # =====================================================
       df_joined %>%
         mutate(
-          change_value = case_when(
-            input$spread == "g"  ~ round(val - aust_val, 1),
-            input$spread == "pc" ~ round((val - aust_val) / aust_val * 100, 1)
-          )
+          change_value = if (input$spread == "g") round(val - aust_val, 1)
+                         else round((val - aust_val) / aust_val * 100, 1)
         ) %>%
         select(
           Geog_type, Geog_cat, Class_level,
@@ -339,7 +337,8 @@ server <- function(input, output, session) {
     
     avg_val <- df %>%
       filter(Geog_cat == "Aust.") %>%
-      pull(val)
+      pull(val) %>%
+      dplyr::first()
     
     spread_abs <- round(high_row$val - low_row$val, 1)
     spread_pc  <- round((high_row$val / low_row$val - 1) * 100, 1)
@@ -462,10 +461,8 @@ server <- function(input, output, session) {
       )
     } else {
       df_joined %>%
-        mutate(change_value = case_when(
-          input$spread == "g"  ~ round(val - aust_val, 1),
-          input$spread == "pc" ~ round((val - aust_val) / aust_val * 100, 1)
-        )) %>%
+        mutate(change_value = if (input$spread == "g") round(val - aust_val, 1)
+                              else round((val - aust_val) / aust_val * 100, 1)) %>%
         select(Geog_type, Geog_cat, Nutrient, change_value, Unit)
     }
   })
@@ -530,10 +527,8 @@ server <- function(input, output, session) {
       )
     } else {
       df_joined %>%
-        mutate(change_value = case_when(
-          input$spread == "g"  ~ round(val - aust_val, 1),
-          input$spread == "pc" ~ round((val - aust_val) / aust_val * 100, 1)
-        )) %>%
+        mutate(change_value = if (input$spread == "g") round(val - aust_val, 1)
+                              else round((val - aust_val) / aust_val * 100, 1)) %>%
         select(Geog_type, Geog_cat, Macronutrient, change_value, Unit)
     }
   })
@@ -598,10 +593,8 @@ server <- function(input, output, session) {
       )
     } else {
       df_joined %>%
-        mutate(change_value = case_when(
-          input$spread == "g"  ~ round(val - aust_val, 1),
-          input$spread == "pc" ~ round((val - aust_val) / aust_val * 100, 1)
-        )) %>%
+        mutate(change_value = if (input$spread == "g") round(val - aust_val, 1)
+                              else round((val - aust_val) / aust_val * 100, 1)) %>%
         select(Geog_type, Geog_cat, ADG_group, change_value, Unit)
     }
   })
