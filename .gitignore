@@ -1,0 +1,19 @@
+# Local data files (app now pulls from ABS URL)
+*.xlsx
+!geog.xlsx
+
+# Archives and working docs
+Archive/
+Docs/
+Prompt.txt
+*.txt
+
+# R session artefacts
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# OS
+.DS_Store
+Thumbs.db
