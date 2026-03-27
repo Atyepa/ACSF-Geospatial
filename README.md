@@ -1,7 +1,8 @@
 # ACSF Geospatial Dietary Indicators
 
 An interactive R Shiny application for exploring Australian dietary data across geographic regions, built using the 
-[Geospatial dietary indicators data cube](https://www.abs.gov.au/articles/geospatial-dietary-indicators/4316DO002_202324_ESTIMATES.xlsx) from [Geospatial dietary indicators - Apparent consumption-based dietary indicators for sub-national areas including SEIFA, Remoteness, SA3 and SA4](https://www.abs.gov.au/articles/geospatial-dietary-indicators)
+[Geospatial dietary indicators data cube](https://www.abs.gov.au/articles/geospatial-dietary-indicators/4316DO002_202324_ESTIMATES.xlsx) from Geospatial dietary indicators - Apparent consumption-based dietary indicators for sub-national areas including SEIFA, Remoteness, SA3 and SA4 
+[www.abs.gov.au/articles/geospatial-dietary-indicators](www.abs.gov.au/articles/geospatial-dietary-indicators)
 
 **Live app:** [atyepa.shinyapps.io/ACSF_Geospatial_2023_24](https://atyepa.shinyapps.io/ACSF_Geospatial_2023_24/)
 
@@ -106,7 +107,7 @@ The data processing script (`App data processing.R`) downloads the ABS datacube 
 
 - All dietary estimates are amounts per 10,000 kJ.
 - SA3/SA4 spatial polygons are pre-simplified to reduce file size and improve map rendering performance.
-* Data suppresssion was applied to a number of areas to uphold confidentialisation. These include:
+**Data suppresssion** was applied to a number of areas to uphold confidentialisation. These include:
 - 76 out of 330 SA3s 
 - 7 out of 88 SA4s
 - 1 out of 8 States
