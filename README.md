@@ -1,7 +1,8 @@
 # ACSF Geospatial Dietary Indicators
 
 An interactive R Shiny application for exploring Australian dietary data across geographic regions, built using the 
-[Geospatial dietary indicators data cube](https://www.abs.gov.au/articles/geospatial-dietary-indicators/4316DO002_202324_ESTIMATES.xlsx) from Geospatial dietary indicators - Apparent consumption-based dietary indicators for sub-national areas including SEIFA, Remoteness, SA3 and SA4 
+[Geospatial dietary indicators data cube (xlsx)](https://www.abs.gov.au/articles/geospatial-dietary-indicators/4316DO002_202324_ESTIMATES.xlsx) from Geospatial dietary indicators - Apparent consumption-based dietary indicators for sub-national areas including SEIFA, Remoteness, SA3 and SA4
+
 [www.abs.gov.au/articles/geospatial-dietary-indicators](www.abs.gov.au/articles/geospatial-dietary-indicators)
 
 **Live app:** [atyepa.shinyapps.io/ACSF_Geospatial_2023_24](https://atyepa.shinyapps.io/ACSF_Geospatial_2023_24/)
