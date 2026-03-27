@@ -230,40 +230,46 @@ Tab15 <- Tab15 %>%
 Tab16 <- Tab16 %>%
   setNames(T16_name) %>%
   pivot_longer(6:7, names_to = "Unit", values_to = "val", values_transform = list(val = as.numeric)) %>%
-  mutate(AUSNUT_code = as.character(AUSNUT_code))
+  mutate(SA4_code = as.character(SA4_code), AUSNUT_code = as.character(AUSNUT_code))
 
 Tab17 <- Tab17 %>%
   setNames(T17_name) %>%
   pivot_longer(6:7, names_to = "Unit", values_to = "val", values_transform = list(val = as.numeric)) %>%
-  mutate(AUSNUT_code = as.character(AUSNUT_code))
+  mutate(SA4_code = as.character(SA4_code), AUSNUT_code = as.character(AUSNUT_code))
 
 Tab18 <- Tab18 %>%
-  setNames(T18_name)
+  setNames(T18_name) %>%
+  mutate(SA4_code = as.character(SA4_code))
 
 Tab19 <- Tab19 %>%
-  setNames(T19_name)
+  setNames(T19_name) %>%
+  mutate(SA4_code = as.character(SA4_code))
 
 Tab20 <- Tab20 %>%
-  setNames(T20_name)
+  setNames(T20_name) %>%
+  mutate(SA4_code = as.character(SA4_code))
 
 Tab21 <- Tab21 %>%
   setNames(T21_name) %>%
   pivot_longer(6:7, names_to = "Unit", values_to = "val", values_transform = list(val = as.numeric)) %>%
-  mutate(AUSNUT_code = as.character(AUSNUT_code))
+  mutate(SA3_code = as.character(SA3_code), AUSNUT_code = as.character(AUSNUT_code))
 
 Tab22 <- Tab22 %>%
   setNames(T22_name) %>%
   pivot_longer(6:7, names_to = "Unit", values_to = "val", values_transform = list(val = as.numeric)) %>%
-  mutate(AUSNUT_code = as.character(AUSNUT_code))
+  mutate(SA3_code = as.character(SA3_code), AUSNUT_code = as.character(AUSNUT_code))
 
 Tab23 <- Tab23 %>%
-  setNames(T23_name)
+  setNames(T23_name) %>%
+  mutate(SA3_code = as.character(SA3_code))
 
 Tab24 <- Tab24 %>%
-  setNames(T24_name)
+  setNames(T24_name) %>%
+  mutate(SA3_code = as.character(SA3_code))
 
 Tab25 <- Tab25 %>%
-  setNames(T25_name)
+  setNames(T25_name) %>%
+  mutate(SA3_code = as.character(SA3_code))
 
 
 #----------------------------
