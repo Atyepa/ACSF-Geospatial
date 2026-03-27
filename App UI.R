@@ -4,7 +4,7 @@
 ui <- fluidPage(
   theme = shinytheme("darkly"),
   custom_styles(),
-  headerPanel("ACSF, dietary indicators by State, SEIFA, Remoteness, SA3 & SA4, 2023-24"),
+  headerPanel("ACSF, Geospatial Dietary Indicators, 2023-24"),
   tags$style(HTML("
   table.dataTable {
     table-layout: fixed !important;
@@ -470,9 +470,9 @@ ui <- fluidPage(
       tags$p(
         "Source: ",
         tags$a(
-          href = "https://www.abs.gov.au/statistics/health/health-conditions-and-risks/apparent-consumption-selected-foodstuffs-australia/latest-release",
+          href = "https://www.abs.gov.au/articles/geospatial-dietary-indicators",
           target = "_blank",
-          "ABS Apparent Consumption of Selected Foodstuffs, Australia, 2023-24"
+          "ACSF Geospatial Dietary Indicators, 2023-24"
         )
       ),
       tags$p(paste0("Data retrieved from ABS, ", format(lubridate::now(), "%d-%m-%Y"))),
