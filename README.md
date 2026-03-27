@@ -108,6 +108,7 @@ The data processing script (`App data processing.R`) downloads the ABS datacube 
 
 - All dietary estimates are amounts per 10,000 kJ.
 - SA3/SA4 spatial polygons are pre-simplified to reduce file size and improve map rendering performance.
+
 **Data suppresssion** was applied to a number of areas to uphold confidentialisation. These include:
 - 76 out of 330 SA3s 
 - 7 out of 88 SA4s
