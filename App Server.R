@@ -850,7 +850,7 @@ server <- function(input, output, session) {
       filter(state %in% input$SA4_state) %>%
       filter(PoS %in% input$SA4_pos) %>%
       filter(Disc_status == input$discstat) %>%
-      filter(ADG_group == input$ADG) %>%
+      filter(ADG_group %in% input$ADG) %>%
       arrange(desc(val)) %>%
       mutate(a = 1, c = cumsum(a)) %>%
       filter(c >= start_SA4()$start_SA4, c <= end_SA4()$end_SA4) %>%
@@ -957,7 +957,7 @@ server <- function(input, output, session) {
       filter(state %in% input$SA3_state) %>%
       filter(PoS %in% input$SA3_pos) %>%
       filter(Disc_status == input$discstat) %>%
-      filter(ADG_group == input$ADG) %>%
+      filter(ADG_group %in% input$ADG) %>%
       arrange(desc(val)) %>%
       mutate(a = 1, c = cumsum(a)) %>%
       filter(c >= start_SA3()$start_SA3, c <= end_SA3()$end_SA3) %>%
@@ -2193,14 +2193,15 @@ server <- function(input, output, session) {
       Nutrients = if (is_sa3) NutrientSA3_filtered() else NutrientSA4_filtered(),
       AUSNUT    = if (is_sa3) AusnutSA3_filtered()   else AusnutSA4_filtered(),
       Macro     = if (is_sa3) MacroSA3_filtered()    else MacroSA4_filtered(),
+      ADG       = if (is_sa3) ADGSA3_filtered()      else ADGSA4_filtered(),
       NULL
     )
     req(df)
-    
+
     if (input$choosetable == "Nutrients") {
       units <- unique(df$Unit)
       nuts  <- sort(unique(df$Nutrient))
-      
+
       if (length(units) > 1) {
         selectInput(
           "map_group_choice",
@@ -2211,15 +2212,19 @@ server <- function(input, output, session) {
       } else if (length(nuts) > 1) {
         checkboxInput("map_sum_groups", "Sum selected nutrients on map", TRUE)
       }
-      
+
     } else if (input$choosetable == "AUSNUT") {
       if (length(unique(df$Unit)) == 1 && length(unique(df$AUSNUT_descr)) > 1) {
         checkboxInput("map_sum_groups", "Sum selected food groups on map", TRUE)
       }
-      
+
     } else if (input$choosetable == "Macro") {
       if (length(unique(df$Macronutrient)) > 1) {
         checkboxInput("map_sum_groups", "Sum selected macronutrients on map", TRUE)
+      }
+    } else if (input$choosetable == "ADG") {
+      if (length(unique(df$ADG_group)) > 1) {
+        checkboxInput("map_sum_groups", "Sum selected ADG groups on map", TRUE)
       }
     }
   })

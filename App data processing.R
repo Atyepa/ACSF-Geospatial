@@ -122,14 +122,14 @@ T16_name <- c("SA4_code", "SA4_name", "Class_level", "AUSNUT_code",  "AUSNUT_des
 T17_name <- c("SA4_code", "SA4_name", "Class_level", "AUSNUT_code",  "AUSNUT_descr", "kJ", "pckJ")
 T18_name <- c("SA4_code", "SA4_name", "Nutrient", "Unit", "val")
 T19_name <- c("SA4_code", "SA4_name", "Macronutrient", "kJ", "Percent of kJ")
-T20_name <- c("Disc_status", "SA4_code", "SA4_name", "ADG_group", "Unit", "val")
+T20_name <- c("SA4_code", "SA4_name", "Disc_status", "ADG_group", "Unit", "val")
 
 # SA3 tables
 T21_name <- c("SA3_code", "SA3_name", "Class_level", "AUSNUT_code",  "AUSNUT_descr", "g", "pcg")
 T22_name <- c("SA3_code", "SA3_name", "Class_level", "AUSNUT_code",  "AUSNUT_descr", "kJ", "pckJ")
 T23_name <- c("SA3_code", "SA3_name", "Nutrient", "Unit", "val")
 T24_name <- c("SA3_code", "SA3_name", "Macronutrient", "kJ", "Percent of kJ")
-T25_name <- c("Disc_status", "SA3_code", "SA3_name", "ADG_group", "Unit", "val")
+T25_name <- c("SA3_code", "SA3_name", "Disc_status", "ADG_group", "Unit", "val")
 
 
 
@@ -239,7 +239,8 @@ Tab17 <- Tab17 %>%
 
 Tab18 <- Tab18 %>%
   setNames(T18_name) %>%
-  mutate(SA4_code = as.character(SA4_code))
+  mutate(SA4_code = as.character(SA4_code),
+         val = as.numeric(val))
 
 Tab19 <- Tab19 %>%
   setNames(T19_name) %>%
@@ -247,7 +248,8 @@ Tab19 <- Tab19 %>%
 
 Tab20 <- Tab20 %>%
   setNames(T20_name) %>%
-  mutate(SA4_code = as.character(SA4_code))
+  mutate(SA4_code = as.character(SA4_code),
+         val = as.numeric(val))
 
 Tab21 <- Tab21 %>%
   setNames(T21_name) %>%
@@ -261,7 +263,8 @@ Tab22 <- Tab22 %>%
 
 Tab23 <- Tab23 %>%
   setNames(T23_name) %>%
-  mutate(SA3_code = as.character(SA3_code))
+  mutate(SA3_code = as.character(SA3_code),
+         val = as.numeric(val))
 
 Tab24 <- Tab24 %>%
   setNames(T24_name) %>%
@@ -269,7 +272,8 @@ Tab24 <- Tab24 %>%
 
 Tab25 <- Tab25 %>%
   setNames(T25_name) %>%
-  mutate(SA3_code = as.character(SA3_code))
+  mutate(SA3_code = as.character(SA3_code),
+         val = as.numeric(val))
 
 
 #----------------------------
@@ -418,14 +422,14 @@ Macro_tab$Unit <- gsub("pckJ", "Percent of kJ", Macro_tab$Unit)
 
 # 3.2 Macronutrient x SA3
 Macro_tabSA3 <- Tab24 %>%
-  pivot_longer(4:5, names_to = "Unit", values_to = "val") %>%
+  pivot_longer(4:5, names_to = "Unit", values_to = "val", values_transform = list(val = as.numeric)) %>%
   mutate(SA3 = paste0(SA3_code, ", ", SA3_name))%>%
   left_join(select(geog,-RA_code), by = "SA3_code") %>%
   distinct()
 
 # 3.3 Macronutrient x SA4
 Macro_tabSA4 <- Tab19 %>%
-  pivot_longer(4:5, names_to = "Unit", values_to = "val") %>%
+  pivot_longer(4:5, names_to = "Unit", values_to = "val", values_transform = list(val = as.numeric)) %>%
   mutate(SA4 = paste0(SA4_code, ", ", SA4_name))%>%
   left_join(select(geog,-RA_code, -SA3_code, -SA4_name), by = "SA4_code") %>%
   distinct()

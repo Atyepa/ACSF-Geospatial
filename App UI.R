@@ -67,7 +67,7 @@ ui <- fluidPage(
         )
       )),
     conditionalPanel(
-      condition = "input.choosetable == 'AUSNUT' && input.chooseSA != 'SA3' && input.chooseSA != 'SA4'",
+      condition = "input.choosetable == 'AUSNUT'",
       pickerInput(
         "A_Nutrient","Grams or Energy (kJ):",
         choices = c("Grams" = "g",
@@ -114,7 +114,7 @@ ui <- fluidPage(
       ),
       radioButtons(
         "adg_unit","ADG unit:",
-        choices = c("Serves","Grams"), selected = "Serves",
+        choices = c("Serves","Grams"), selected = "Grams",
         inline = TRUE
       )
     ),
