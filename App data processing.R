@@ -14,7 +14,6 @@ library(leaflet)
 library(htmltools)
 library(htmlwidgets)
 library(rmapshaper)
-library(clipr)
 
 options(warn = -1)
 
@@ -572,14 +571,6 @@ attach_layer_to_sp_sa4 <- function(SA4_sp, layer_df) {
 }
 
 #=============================================
-
-
-
-
-
-
-
-
 
 
 

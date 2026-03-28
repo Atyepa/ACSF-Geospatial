@@ -5,6 +5,6 @@ account: atyepa
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 16998829
-bundleId: 11768232
+bundleId: 11772593
 url: https://atyepa.shinyapps.io/ACSF_Geospatial_2023_24/
 version: 1
