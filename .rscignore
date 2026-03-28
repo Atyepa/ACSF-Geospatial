@@ -6,8 +6,12 @@ Docs
 *.docx
 *.pdf
 *.url
+*.md
+*.pptx
 .RData
 .Rhistory
+.gitignore
+.rscignore
 rename_sheets.xlsx
 Geospatial_dietary_indicators_2023_24.xlsx
 Geospatial_dietary_indicators_2023_24_update.xlsx
